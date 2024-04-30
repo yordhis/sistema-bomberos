@@ -13,7 +13,7 @@
                         <div class="card info-card sales-card rounded-3">
 
                             <div class="card-body">
-                                <h5 class="card-title">Grupos de Estudios</span></h5>
+                                <h5 class="card-title">Equipos</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center ">
@@ -36,7 +36,7 @@
                         <div class="card info-card sales-card rounded-3">
 
                             <div class="card-body">
-                                <h5 class="card-title">Estudiantes</span></h5>
+                                <h5 class="card-title">Bomberos</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center ">
@@ -59,7 +59,7 @@
                         <div class="card info-card sales-card rounded-3">
 
                             <div class="card-body">
-                                <h5 class="card-title">Profesores</span></h5>
+                                <h5 class="card-title">Incidencias registradas</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center ">
@@ -82,7 +82,7 @@
                         <div class="card info-card sales-card rounded-3">
 
                             <div class="card-body">
-                                <h5 class="card-title">Cuotas Atrazadas</span></h5>
+                                <h5 class="card-title">Incidencias por atender</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center ">
@@ -109,7 +109,7 @@
                         <div class="card info-card sales-card rounded-3">
 
                             <div class="card-body">
-                                <h5 class="card-title">Pagos Recibidos | {{date('m/Y')}}</span></h5>
+                                <h5 class="card-title">Incidencias atendidas </span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center ">
@@ -129,18 +129,18 @@
 
                     <!-- Sales Card -->
                     <div class="col-sm-4">
-                        <div class="card info-card sales-card bg-primary rounded-3">
+                        <div class="card info-card sales-card bg-success rounded-3">
                             <a href="{{ route('admin.inscripciones.index') }}" >
                                 <div class="card-body">
                                     <h5 class="card-title"></span></h5>
     
                                     <div class="d-flex align-items-center">
                                         <div class="ps-3">
-                                            <h2 class="text-warning">Procesar Pago</h6>
+                                            <h2 class="text-dark">Registrar incidencia</h6>
                                         </div>
     
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center ">
-                                            <i class="bi bi-paypal text-primary"></i>
+                                            <i class="bi bi-exclamation-triangle text-dark"></i>
                                         </div>
                                     </div>
                                 </div>

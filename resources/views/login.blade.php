@@ -1,6 +1,6 @@
 @extends('layouts.index')
 
-@section('title', 'A. Maryland')
+@section('title', 'Sistema de incidencias')
 
 @section('content')
   <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center ">
@@ -11,8 +11,12 @@
           <div class="d-flex justify-content-center pb-1" >
           
             <a href="{{ route('login.index') }}" >
-              <img src="{{ asset('assets/img/logo.png') }}" alt="logo" id="logo">
+              <img src="{{ asset('assets/img/logo_bomberos.png') }}" class="img-thumbnail" 
+              alt="logo" id="logo">
             </a>
+            <h1>
+              Bomberos Universitarios 
+            </h1>
           </div><!-- End Logo -->
 
           <div class="card mb-1">
@@ -20,19 +24,20 @@
             <div class="card-body">
 
               <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4 text-dark">Ingrese a su cuenta</h5>
-                <p class="text-center small text-danger">Ingrese su nombre de usuario y contraseña para iniciar sesión</p>
+                <h5 class="card-title text-center pb-0 fs-4 text-dark">Ingrese al sistema de incidencia</h5>
+                <p class="text-center small text-danger">Ingrese correo afiliado y contraseña para iniciar sesión</p>
               </div>
 
               <form action="{{ route('login.store') }}" method="post" class="row g-3 needs-validation" novalidate>
               @csrf
               @method('post')
                 <div class="col-12">
-                  <label for="yourUsername" class="form-label">Nombre de Usuario</label>
+                  <label for="yourUsername" class="form-label">E-mail</label>
                   <div class="input-group has-validation">
-                    <span class="input-group-text bg-primary text-white" id="inputGroupPrepend">@</span>
-                    <input type="text" name="email" class="form-control" id="yourUsername" required>
-                    <div class="invalid-feedback">Por favor, ingrese su nombre de usuario!</div>
+                    <input type="text" name="email" class="form-control" id="yourUsername" 
+                    placeholder="Ingrese su correo electrónico"
+                    required>
+                    <div class="invalid-feedback">Por favor, ingrese correo electrónico!</div>
                     @error('nombre')
                         <span class="text-danger">
                           {{ $message }}
@@ -43,7 +48,9 @@
 
                 <div class="col-12">
                   <label for="yourPassword" class="form-label">Contraseña</label>
-                  <input type="password" name="password" class="form-control" id="yourPassword" required>
+                  <input type="password" name="password" class="form-control" id="yourPassword" 
+                  placeholder="Ingrese su contraseña"
+                  required>
                   <div class="invalid-feedback">Por favor, ingrese su contraseña!</div>
                 </div>
 
