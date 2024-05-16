@@ -130,7 +130,7 @@
                     <!-- Sales Card -->
                     <div class="col-sm-4">
                         <div class="card info-card sales-card bg-success rounded-3">
-                            <a href="{{ route('admin.inscripciones.index') }}" >
+                            <a href="{{ route('admin.incidencias.index') }}" >
                                 <div class="card-body">
                                     <h5 class="card-title"></span></h5>
     

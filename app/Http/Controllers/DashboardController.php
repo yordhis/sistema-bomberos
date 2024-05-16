@@ -32,17 +32,12 @@ class DashboardController extends Controller
     {
         $notificaciones = $this->data->notificaciones;
         $dataTarjetas = [
-            "grupos" => Grupo::where('estatus', 1)->count(),
-            "estudiantes" => GrupoEstudiante::where('estatus', 1)->count(),
-            "profesores" => Profesore::where('estatus', 1)->count(),
-            "cuotas" => Cuota::where('estatus', 0)
-            ->whereYear('fecha', date('Y'))
-            ->whereMonth('fecha','=' , date('m'))
-            ->whereDay('fecha','<', date('d'))
-            ->count(),
-            "pagos" => Pago::whereYear('fecha', date('Y'))
-            ->whereMonth('fecha', date('m'))
-            ->count()
+            "grupos" => 0,
+            "estudiantes" => 0,
+            "profesores" => 0,
+            "cuotas" => 0,
+            
+            "pagos" => 0
         ];
 
         return view('admin.dashboard', compact('dataTarjetas', 'notificaciones'));
