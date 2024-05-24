@@ -11,12 +11,27 @@
 
     <section class="section">
         <div class="row">
+            <div class="col-12">  
+                @if ($errors->any())
+                    <div class="alert alert-danger text-start">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
 
 
-
-            <div class="col-sm-6 col-xs-12">
+            <div class="col-12">
                 <h2> Lista de bomberos </h2>
             </div>
+            {{-- boton del modal para crear --}}
+            <div class="col-sm-6 col-xs-12">
+            @include('admin.bomberos.partials.modalFormCreate')
+            </div>
+
             <div class="col-sm-6 col-xs-12">
                 <form action="{{ route('admin.bomberos.index') }}" method="post">
                 @csrf
@@ -90,28 +105,14 @@
                 </table>
 
                 <!-- End Table with stripped rows -->
+                
+                            <div class="col-sm-6 col-xs-12">
+                                {{ $bomberos->appends(['filtro'=> $request->filtro])->links() }}
+                            </div>
 
             </div>
 
-            <div class="col-sm-6 col-xs-12">
-                {{ $bomberos->appends(['filtro'=> $request->filtro])->links() }}
-            </div>
-
-            <div class="col-sm-6 col-xs-12 text-end">
-                {{-- boton del modal para crear --}}
-                @include('admin.bomberos.partials.modaldialog')
-                <br>
-                 
-                @if ($errors->any())
-                    <div class="alert alert-danger text-start">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
+           
         </div>
 
        
