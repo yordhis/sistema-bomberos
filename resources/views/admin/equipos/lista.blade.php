@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Lista de bomberos')
+@section('title', 'Lista de equipos')
 
 @section('content')
 
     @if( session('mensaje') )
         @include('partials.alert')
     @endif
+
     <div id="alert"></div>
 
     <section class="section">
@@ -25,15 +26,15 @@
 
 
             <div class="col-12">
-                <h2> Lista de bomberos </h2>
+                <h2> Lista de equipos </h2>
             </div>
             {{-- boton del modal para crear --}}
             <div class="col-sm-6 col-xs-12">
-            @include('admin.bomberos.partials.modalFormCreate')
+            @include('admin.equipos.partials.modalFormCreate')
             </div>
 
             <div class="col-sm-6 col-xs-12">
-                <form action="{{ route('admin.bomberos.index') }}" method="post">
+                <form action="{{ route('admin.equipos.index') }}" method="post">
                 @csrf
                 @method('get')
                 <div class="input-group mb-3">
@@ -65,23 +66,23 @@
                     </thead>
                     <tbody>
                
-                        @foreach ($bomberos as $bombero)
+                        @foreach ($equipos as $equipo)
                             <tr>
-                                <th scope="row">{{ $bombero->id }}</th>
-                                <td>{{ $bombero->nombre }}</td>
-                                <td>{{ $bombero->cedula }}</td>
-                                <td>{{ $bombero->telefono }}</td>
-                                <td class="text-break">{{ $bombero->correo }}</td>
+                                <th scope="row">{{ $equipo->id }}</th>
+                                <td>{{ $equipo->nombre }}</td>
+                                <td>{{ $equipo->cedula }}</td>
+                                <td>{{ $equipo->telefono }}</td>
+                                <td class="text-break">{{ $equipo->correo }}</td>
 
                                 <td>
-                                    @include('admin.bomberos.partials.modalVer')
+                                    @include('admin.equipos.partials.modalVer')
                                     
-                                    <a href="{{ route('admin.bomberos.edit', $bombero->id) }}">
+                                    <a href="{{ route('admin.equipos.edit', $equipo->id) }}">
                                         <i class="bi bi-pencil"></i>
                                     </a>
 
 
-                                    @include('admin.bomberos.partials.modalEliminar')
+                                    @include('admin.equipos.partials.modalEliminar')
 
 
                                 </td>
@@ -94,8 +95,8 @@
                         <tr>
 
                             <td colspan="7" class="text-center table-secondary">
-                                Total de bomberos: {{ $bomberos->total() }} | 
-                                <a href="{{ route('admin.bomberos.index') }}"
+                                Total de equipos: {{ $equipos->total() }} | 
+                                <a href="{{ route('admin.equipos.index') }}"
                                    class="text-primary" >
                                     Ver todo
                                 </a>
@@ -108,7 +109,7 @@
                 <!-- End Table with stripped rows -->
                 
                             <div class="col-sm-6 col-xs-12">
-                                {{ $bomberos->appends(['filtro'=> $request->filtro])->links() }}
+                                {{ $equipos->appends(['filtro'=> $request->filtro])->links() }}
                             </div>
 
             </div>

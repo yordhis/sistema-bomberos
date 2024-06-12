@@ -43,6 +43,4 @@ Route::middleware('auth')->group(function () {
     Route::resource('/incidencias', UserController::class)->names('admin.incidencias');
     Route::resource('/formatos', UserController::class)->names('admin.formatos');
     Route::resource('/usuarios', UserController::class)->names('admin.usuarios');
-    
-    
 });

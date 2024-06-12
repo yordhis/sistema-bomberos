@@ -15,6 +15,8 @@ class CreateEquipoBomberosTable extends Migration
     {
         Schema::create('equipo_bomberos', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo_equipo', 255);
+            $table->string('cedula_bombero', 255);
             $table->timestamps();
         });
     }

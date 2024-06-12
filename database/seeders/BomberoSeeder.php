@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Bombero;
 use Illuminate\Database\Seeder;
 
 class BomberoSeeder extends Seeder
@@ -13,6 +14,6 @@ class BomberoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $bomberos = Bombero::factory()->count(3)->make();
     }
 }
